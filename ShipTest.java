@@ -70,29 +70,44 @@ class ShipTest {
 		assertEquals(testShip.getDirection(), 0);
 	}
 
-	@Test
 	void testGetRow() {
-		fail("Not yet implemented");
+		Ship testShip = new Ship(3);
+		testShip.setLocation(4, 2);
+		assertEquals(testShip.getRow(), 4);
 	}
 
 	@Test
 	void testGetCol() {
-		fail("Not yet implemented");
+		Ship testShip = new Ship(4);
+		testShip.setLocation(1, 3);
+		assertEquals(testShip.getCol(), 3);
 	}
 
 	@Test
 	void testGetLength() {
-		fail("Not yet implemented");
+		Ship testShip = new Ship(3);
+		assertEquals(testShip.getLength(), 3);
 	}
 
 	@Test
 	void testGetDirection() {
-		fail("Not yet implemented");
+		Ship testShip = new Ship(2);
+		assertEquals(testShip.getDirection(), -1);
+		testShip.setDirection(1);
+		assertEquals(testShip.getDirection(), 1);
+		testShip.setDirection(0);
+		assertEquals(testShip.getDirection(), 0);
 	}
-
+	
 	@Test
 	void testToString() {
-		fail("Not yet implemented");
+		Ship testShip = new Ship(4);
+		testShip.setLocation(5, 7);
+		assertEquals(testShip.toString(), "Ship: 5, 7 with length 4 and direction UNSET");
+		testShip.setDirection(0);
+		assertEquals(testShip.toString(), "Ship: 5, 7 with length 4 and direction HORIZONTAL");
+		testShip.setDirection(1);
+		assertEquals(testShip.toString(), "Ship: 5, 7 with length 4 and direction VERTICAL");
 	}
 
 }
